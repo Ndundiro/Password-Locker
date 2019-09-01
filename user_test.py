@@ -41,6 +41,16 @@ class TestUser(unittest.TestCase):
             self.new_user.delete_user()
             self.assertEqual(len(User.user_list), 1)
 
+#find a user using username
+             def test_find_user(self):
+        
+        self.new_user.save_user()
+        test_user = User("username", "email", "password")
+        test_user.save_user()
+        found_user = User.find_user("ndundirokamau@gmail.com")  #Uses email to verify because no two people share the same email address
+        self.assertEqual(found_user.email, self.new_user.email)
+
+
 
 
         if __name__ == "__main__":
