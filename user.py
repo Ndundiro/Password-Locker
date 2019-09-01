@@ -1,10 +1,6 @@
 import pyperclip
 class User:
 
-
-    '''
-    Class that generates new instances of user
-    '''
     user_list = []  # list of users to be stored here
 
     def __init__(self, user_name, email, password):
@@ -23,9 +19,11 @@ class User:
         User.user_list.remove(self)
 
     # find username using search terms
-        @classmethod
+    @classmethod
     def find_user(cls, email):
         for user in cls.user_list:
             if user.email == email:
                 return  user
+
+
 
