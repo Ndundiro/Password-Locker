@@ -22,3 +22,10 @@ class User:
         
         User.user_list.remove(self)
 
+    # find username using search terms
+        @classmethod
+    def find_user(cls, email):
+        for user in cls.user_list:
+            if user.email == email:
+                return  user
+
