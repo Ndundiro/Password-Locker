@@ -12,23 +12,21 @@ class Credentials:
 
         
 
-        # check if saving multiple cridentials is possible
-       
+        # check if saving multiple cridentials is possible .....................1
+    def save_credentials(self):
+        Credentials.credentials_list.append(self)
 
-        
-    def save_cred(self):
-            '''
-            self credentials in cred_list
-            '''
-            Credentials.cred_list.append(self)
+
+       # delete created credentials off our list
+    def delete_credentials(self):        
+        Credentials.credentials_list.remove(self) 
 
          
         #search for accounts
-        
-        @classmethod
+    @classmethod
     def find_account(cls, account):
-        
-        
-        for cred in cls.cred_list:
-            if cred.account == account:
-                return cred 
+        for credentials in cls.credentials_list:
+            if credentials.account == account:
+                return credentials 
+
+    
