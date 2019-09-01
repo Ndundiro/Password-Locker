@@ -19,16 +19,5 @@ def delete_user(self):
 def find_user(email):
     return  User.find_by_email(email):
 
-#     # 5. Function that checks for existing Users
-# def check_existing_user(user):
-#     return User.check_existing_user(user)
-
-#     6. function that saves Users
-# def display_users():
-# return User.display_users()
-
-# 7. Function that copies cridentials on clipboard
-# def copy_User_credential():
-# return User.find_user(email)
-# pyperclip.copy(user_found.email)
+  
         
