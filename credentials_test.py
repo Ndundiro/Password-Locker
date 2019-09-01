@@ -14,4 +14,4 @@ class TestCredentials(unittest.TestCase):
     #     '''
     #     clear list before any test is run
     #     '''
-    #     Credentials.cred_list = []
+    #     Credentials.credentials_list = []
