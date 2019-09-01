@@ -16,8 +16,19 @@ class Credentials:
        
 
         
-def save_cred(self):
-        '''
-        self credentials in cred_list
-        '''
-        Credentials.cred_list.append(self)
+    def save_cred(self):
+            '''
+            self credentials in cred_list
+            '''
+            Credentials.cred_list.append(self)
+
+         
+        #search for accounts
+        
+        @classmethod
+    def find_account(cls, account):
+        
+        
+        for cred in cls.cred_list:
+            if cred.account == account:
+                return cred 

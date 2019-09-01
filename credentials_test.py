@@ -42,3 +42,19 @@ class TestCredentials(unittest.TestCase):
         test_cred = Credentials("Instagram", "bigman@gmail.com","Sociallife01")
         test_cred.save_cred()
         self.assertEqual(len(Credentials.cred_list),2)
+
+      #  test if you can delete credentials test
+        def test_delete_credentials(self): 
+        self.new_cred.save_cred()
+        test_cred = Credentials("Instagram", "bigman@gmail.com","Sociallife01")
+        test_cred.save_cred()
+        self.new_cred.delete_cred()
+        self.assertEqual(len(Credentials.cred_list), 1)
+
+ # to test for credentials - if they are searchable.
+ def test_search_for_cred(self):  
+        self.new_cred.save_cred()
+        test_cred = Credentials("Instagram", "bigman@gmail.com","Sociallife01")
+        test_cred.save_cred()
+        find_cred= Credentials.find_account("Instagram")
+        self.assertEqual(find_cred.account, test_cred.account)
