@@ -3,7 +3,7 @@
 ## Author Ndundiro Kamau, August 30th 2019
 
 ## Description
-A python that is operated via the commandline takes in user password for different accounts and stores them.The user has to log in to access the stored accounts cridentials.The app can also generate the password for a new account the user intends to open in future.
+A python that is operated via the commandline takes in user password for different accounts and stores them.The user has to log in to access the stored accounts cridentials.The app can also generate a random password for a user.
 
 ## Behaviour Driven Development(BDD)
 The website has the following functionalities:
@@ -20,16 +20,18 @@ The website has the following functionalities:
 
 
 ## Setup / Installation requirements
-Prerequisite Installations :
+#### Prerequisite Installations :
 
 * python3.6
 * pyperclip
 * pip
+#### Cloning 
 
-* Clone or download and unzip the repository from github, https://github.com/Ndundiro/Password-Locker/.Use the command git clone on the terminal.
 * git clone  https://github.com/Ndundiro/Password-Locker on terminal.
 * cd Password-Locker
 * code . or atom . based on the text editor you have to open the project.
+#### Running the app
+
 * To run the app, use python3 app.py
 * To tun Tests, use python3 -m unittest
 
