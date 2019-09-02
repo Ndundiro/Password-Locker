@@ -9,9 +9,9 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials = Credentials("Facebook", "0712345678", "alfiecode")
     
 
-    The tearDown() method allows us to clean up.
-    # def tearDown(self):
-    #     Credentials.credentials_list = []
+   # The tearDown() method allows us to clean up.
+   # def tearDown(self):
+   # Credentials.credentials_list = []
 
     def test_init(self):
         
@@ -30,7 +30,7 @@ class TestCredentials(unittest.TestCase):
 
 
         #check if users can store multiple credentials..................3
-        def test_saving_multiple_creds(self):
+    def test_saving_multiple_creds(self):
         
         self.new_cred.save_cred()
         test_cred = Credentials("Instagram", "bigman@gmail.com","Sociallife01")
@@ -38,15 +38,15 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.cred_list),2)
 
       #  test if you can delete credentials test ...............4
-        def test_delete_credentials(self): 
+    def test_delete_credentials(self): 
         self.new_cred.save_cred()
-        test_cred = Credentials("Instagram", "bigman@gmail.com","Sociallife01")
-        test_cred.save_cred()
-        self.new_cred.delete_cred()
+        test_credentials = Credentials("Instagram", "bigman@gmail.com","Sociallife01")
+        test_credentials.save_cred()
+        self.new_credentials.delete_cred()
         self.assertEqual(len(Credentials.cred_list), 1)
 
       # to test if credentials are searchable..................5
-        def test_search_for_cred(self):  
+    def test_search_for_cred(self):  
         self.new_cred.save_cred()
         test_cred = Credentials("Instagram", "bigman@gmail.com","Sociallife01")
         test_cred.save_cred()
@@ -54,7 +54,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(find_cred.account, test_cred.account)
 
         # test if all credentials can be displayed.....................6
-     def test_display_credentials(self): 
+    def test_display_credentials(self): 
         
         self.assertEqual(Credentials.display_cred(), Credentials.cred_list)
 
