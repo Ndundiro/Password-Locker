@@ -37,10 +37,42 @@ def main():
 	print("Welcome to Password Safe.Please enter your name to continue:")
 	name = input()
 	print(f"{name}, Sign up to continue")
+	print("\n")
+	print("#"*50)
+	print("Reply with the following short codes to navigate through Password Safe :\n sign - Sign Up,\n log - log In,\n  exit - exit ")
+	print("*" *80)
+	 
+	code = input().lower()
 
+	if code == "sign":
+		print("Enter your details to create account")
+		print("Enter Username")
+		user_name = input().lower()
+
+		print("Enter your email adress")
+		email = input().lower()
+
+		print("Enter your password")
+		password = input()
+
+		save_user(create_user(user_name, email, password))
+
+		# Has password error...TypeError: create_user() missing 1 required positional argument: 'password
+
+		print(f"Welcome {username} to Password Safe.You are now logged in.")
+
+		# After Log in process
 
 if __name__ == '__main__':
     main()  
 
 
 
+
+
+#         else:
+#             print("Invalid, please  use these short codes : ca - create a new account, da - display accounts, fa -find an account, de- delete account , gp - generate a random password , ex -logout")
+# if __name__ == '__main__':
+#     main()  
+
+        
