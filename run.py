@@ -63,16 +63,35 @@ def main():
 
 		# After Log in process
 
+		print("Use the following shortcodes to proceed : create - create new account details,\n display - display accounts,\n find - find an account,\n generate - generate random password,\n exit - exit the Application")
+	
+	# elif code = "log"  create the log in logic if user already has an account
+	elif code == "create":
+		print("Please enter the Account details for the password you want to save: ")
+		print("Account name")
+		account = input()
+		print("LogIn cridential used.eg. phone number,email ")
+		email = input()
+		print ("Enter the password used")
+		password = input()
+		save_cred(create_credentials(account, email, passlock))
+		print("Your account credentials have been saved.Enter  display to view or enter create to add another account.")
+
+		save_user(create_credentials(account, email,passlock)) # create and save new passlock.
+		save_credentials(create_credentials(account, email,passlock))
+
+		print ("\n")
+		print(f"A new user,with a user name {account} and email {email} has been added")
+		
+		print("Dear User,please use the given shortcodes to proceed")		
+
+
+
+
+	else:
+		print("Dear User,you have entered an invalid shortcode.Please enter the following short codes to access Password Safe:\n sign - Sign Up,\n log - log In,\n  exit - exit ")
+
 if __name__ == '__main__':
     main()  
-
-
-
-
-
-#         else:
-#             print("Invalid, please  use these short codes : ca - create a new account, da - display accounts, fa -find an account, de- delete account , gp - generate a random password , ex -logout")
-# if __name__ == '__main__':
-#     main()  
 
         
