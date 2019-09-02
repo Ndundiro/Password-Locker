@@ -61,8 +61,7 @@ def main():
 
 		print(f"Welcome {username} to Password Safe.You are now logged in.")
 
-		# After Log in process
-
+		# Accessible to Users who have already logged in Only
 		print("Use the following shortcodes to proceed : create - create new account details,\n display - display accounts,\n find - find an account,\n generate - generate random password,\n exit - exit the Application")
 	
 	# elif code = "log"  create the log in logic if user already has an account
@@ -83,7 +82,13 @@ def main():
 		print ("\n")
 		print(f"A new user,with a user name {account} and email {email} has been added")
 		
-		print("Dear User,please use the given shortcodes to proceed")		
+		print("Dear User,please use the given shortcodes to proceed")	
+
+		elif code =="exit":
+			print("Logging Out ...  .   .   .")
+
+			print("\n")	
+			print("Adios,Have a nice time")
 
 
 
