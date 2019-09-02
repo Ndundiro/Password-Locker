@@ -20,10 +20,11 @@ The website has the following functionalities:
 
 
 ## Setup / Installation requirements
-Prerequisite Installations:
-*python3.6
-*pyperclip
-*pip
+Prerequisite Installations :
+
+* python3.6
+* pyperclip
+* pip
 
 * Clone or download and unzip the repository from github, https://github.com/Ndundiro/Password-Locker/.Use the command git clone on the terminal.
 * git clone  https://github.com/Ndundiro/Password-Locker on terminal.
