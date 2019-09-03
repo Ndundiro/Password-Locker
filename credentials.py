@@ -8,25 +8,39 @@ class Credentials:
         self.account_name = account_name
         self.login_detail = login_detail
         self.Password = Password
-        ''' save our accounts passwords here.'''
+        ''' 
+        save our accounts passwords here.
+        '''
 
         
 
-        # check if saving multiple cridentials is possible .....................1
+#         # check if saving multiple cridentials is possible .....................1
     def save_credentials(self):
-        Credentials.credentials_list.append(self)
+        Credentials.credentials_list.append(self) 
+        '''
+        functions that saves credentials once defined
+        '''   
 
 
-       # delete created credentials off our list
+#        # delete created credentials off our list
     def delete_credentials(self):        
         Credentials.credentials_list.remove(self) 
+        '''
+        used to delete credentials 
+        '''
+
+#     def    display_credentials(self):
+#         Credentials.credentials_list.display(self)
 
          
-        #search for accounts
+#         #search for accounts
     @classmethod
-    def find_account(cls, account):
+    def find_account(cls, account_name):
+        '''
+        search for accounts
+        '''
         for credentials in cls.credentials_list:
-            if credentials.account == account:
+            if credentials.account_name == account_name:
                 return credentials 
 
     
