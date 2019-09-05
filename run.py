@@ -1,10 +1,10 @@
 #!/usr/bin/env python3.6
 from user import User
 from credentials import Credentials
-import pyperclip
+# import pyperclip
 import string
 import random
-# from pyfiglet import Figlet
+from pyfiglet import Figlet
 
 # 1. function to create new user
 def create_user( user_name, email, password):
@@ -92,8 +92,8 @@ def passGen(size = 8, char=string.ascii_uppercase + string.ascii_lowercase + str
 
 def main():
 
-	# custom_fig = Figlet(font='crawford')
-	# print(custom_fig.renderText('PARSEWORD'))
+	# custom_fig = Figlet(font='speed')
+	# print(custom_fig.renderText('PASSWORD SAFE'))
 
 	print("Welcome to Password Safe.Follow through our Menu and enter the shortcode to navigate:\n sign ---- to sign up,\n log ----   to log In,\n  exit ---- to exit ")
 	
@@ -101,8 +101,29 @@ def main():
 	print("*" *80)
 	
 	code = input().lower()
+	# .........................trial.........................
+	if code == "log":  #create the log in logic if user already has an account
+			
+		print("Enter your  Username")
+		user_name = input().lower()
 
-	if code == "sign":
+		# print("Enter your email adress")
+		# email = input().lower()
+
+		print ("Enter your password")
+		password = input()
+		
+		if find_user(user_name, password) == password:  #can take user_name as the third parameter
+			print("Successfully logged in")	
+	
+
+		else:
+			print("Your cridentials don't match any account.Enter the shortcode sign, to Sign up and access Application.")
+			
+			code = input()
+
+# ................................trial........................
+	elif code == "sign":
 		print("Enter your details to create account")
 		print("Enter Username")
 		user_name = input().lower()
@@ -116,7 +137,7 @@ def main():
 		# save_user( user_name, password)
 
 		print(f"Welcome {user_name} to Password Safe.You are now logged in.")
-		
+		print("\n")
 			# Accessible to Users who have already logged in Only
 		print("Use the following shortcodes to proceed :\n create - create new account details,\n display - display accounts,\n find - find an account,\n exit - exit the Application")
 		while True:
@@ -163,28 +184,27 @@ def main():
 
 
 
-	elif code == "log":  #create the log in logic if user already has an account
+
+	# elif code == "log":  #create the log in logic if user already has an account
 			
-		print("Enter your  Username")
-		user_name = input().lower()
+	# 	print("Enter your  Username")
+	# 	user_name = input().lower()
 
-		# print("Enter your email adress")
-		# email = input().lower()
+	# 	# print("Enter your email adress")
+	# 	# email = input().lower()
 
-		print ("Enter your password")
-		password = input()
+	# 	print ("Enter your password")
+	# 	password = input()
+		
+	# 	if find_user(user_name, password) == password:  #can take user_name as the third parameter
+	# 		print("Successfully logged in")	
+	
 
-		if find_user(user_name, password) == password:  #can take user_name as the third parameter
-			print("Successfully logged in")	
-
-		else:
-			print("Your cridentials don't match any account.Enter the shortcode sign, to Sign up and access Application.")
-
-
-
-
-
-
+	# 	while True:
+	# 		print("Your cridentials don't match any account.Enter the shortcode sign, to Sign up and access Application.")
+	# 		code = input()
+		
+		
 	elif code =="exit":
 		print("Logging Out ... .  .   .    .     .      .         .       .")
 
@@ -195,7 +215,7 @@ def main():
 
 
 	else:
-		print("Dear User,you have entered an invalid shortcode.Please enter the following short codes to access Password Safe:\n sign - Sign Up,\n log - log In,\n  exit - exit ")
+		print("Dear User,you have entered an invalid shortcode.Please enter the following short codes to access Password Safe:\n sign - Sign Up,")
 
 
 if __name__ == '__main__':
