@@ -4,6 +4,7 @@ from credentials import Credentials
 import pyperclip
 import string
 import random
+# from pyfiglet import Figlet
 
 # 1. function to create new user
 def create_user( user_name, email, password):
@@ -91,6 +92,8 @@ def passGen(size = 8, char=string.ascii_uppercase + string.ascii_lowercase + str
 
 def main():
 
+	# custom_fig = Figlet(font='crawford')
+	# print(custom_fig.renderText('PARSEWORD'))
 
 	print("Welcome to Password Safe.Follow through our Menu and enter the shortcode to navigate:\n sign ---- to sign up,\n log ----   to log In,\n  exit ---- to exit ")
 	
@@ -115,7 +118,7 @@ def main():
 		print(f"Welcome {user_name} to Password Safe.You are now logged in.")
 		
 			# Accessible to Users who have already logged in Only
-		print("Use the following shortcodes to proceed :\n create - create new account details,\n display - display accounts,\n find - find an account,\n generate - generate random password,\n exit - exit the Application")
+		print("Use the following shortcodes to proceed :\n create - create new account details,\n display - display accounts,\n find - find an account,\n exit - exit the Application")
 		while True:
 			code = input()
 			if code == "create":
@@ -146,7 +149,10 @@ def main():
 				# save_credentials(create_credentials)
 				create_credentials( save_credentials)
 
-				print("Your account credentials have been saved.Enter  display to view or enter create to add another account.")
+				print(f"You have successfully added an account with the following details\nAccount name: {account}\nLog in cridential used: {email}\nPassword: {password}.")
+				print("To create another account type in create,to display accounts created type display,to exit type exit")
+				
+			elif code == "display":
 
 				save_user(create_user(user_name, email, password)) # create and save new password.
 
@@ -190,6 +196,7 @@ def main():
 
 	else:
 		print("Dear User,you have entered an invalid shortcode.Please enter the following short codes to access Password Safe:\n sign - Sign Up,\n log - log In,\n  exit - exit ")
+
 
 if __name__ == '__main__':
     main()  
